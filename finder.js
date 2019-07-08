@@ -2,32 +2,32 @@ const {execSync} = require('child_process')
 
 // the list of sinks is taken from: https://wicg.github.io/trusted-types/dist/spec/#idl-index
 const SINKS = [
-  ['window', 'open'],
+  ['window', '\\.', 'open', ' = '],
 
-  ['document', 'open'],
-  ['document', 'write'],
-  ['document', 'writeln'],
+  ['document', '\\.', 'open', ' = '],
+  ['document', '\\.', 'write', ' = '],
+  ['document', '\\.', 'writeln', ' = '],
 
-  ['location', 'href'],
-  ['location', 'assign'],
-  ['location', 'replace'],
+  ['location', '\\.', 'href', ' = '],
+  ['location', '\\.', 'assign', ' = '],
+  ['location', '\\.', 'replace', ' = '],
 
   // these can be part of elements which are basically variables
-  ['', 'src'],
-  ['', 'text'],
-  ['', 'srcdoc'],
-  ['', 'data'],
-  ['', 'codeBase'],
-  ['', 'href'],
-  ['', 'action'],
-  ['', 'formAction'],
-  ['', 'innerText'],
-  ['', 'textContent'],
-  ['', 'outerHTML'],
-  ['', 'insertAdjacentHTML'],
-  ['', 'innerHTML'],
-  ['', 'createContextualFragment'],
-  ['', 'parseFromString'],
+  ['', '\\.', 'src', ' = '],
+  ['', '\\.', 'text', ' = '],
+  ['', '\\.', 'srcdoc', ' = '],
+  ['', '\\.', 'data', ' = '],
+  ['', '\\.', 'codeBase', ' = '],
+  ['', '\\.', 'href', ' = '],
+  ['', '\\.', 'action', ' = '],
+  ['', '\\.', 'formAction', ' = '],
+  ['', '\\.', 'innerText', ' = '],
+  ['', '\\.', 'textContent', ' = '],
+  ['', '\\.', 'outerHTML', ' = '],
+  ['', '\\.', 'insertAdjacentHTML', ' = '],
+  ['', '\\.', 'innerHTML', ' = '],
+  ['', '\\.', 'createContextualFragment', ' = '],
+  ['', '\\.', 'parseFromString', ' = '],
 ]
 
 const USAGE = `
@@ -52,7 +52,8 @@ if (process.argv.length <= 2) {
 
   console.log(`SEARCHING IN: ${path}, EXCLUDED DIRS: ${JSON.stringify(excludedDirs)}`)
   SINKS.forEach((sink) => {
-    console.log(`SEARCHING FOR: ${sink.join('\\.')}`)
-    execSync(`grep -HrnI --color=always '${sink.join('\\.')}' ${exclude} 1>&2 ${path} || true`)
+    const searchTerm = sink.join('')
+    console.log(`SEARCHING FOR: ${searchTerm}`)
+    execSync(`grep -HrnI --color=always '${searchTerm}' ${exclude} 1>&2 ${path} || true`)
   })
 }
