@@ -8,7 +8,6 @@ const SINKS = [
   ['document', '\\.', 'write', ' = '],
   ['document', '\\.', 'writeln', ' = '],
 
-  ['location', '\\.', 'href', ' = '],
   ['location', '\\.', 'assign', ' = '],
   ['location', '\\.', 'replace', ' = '],
 
