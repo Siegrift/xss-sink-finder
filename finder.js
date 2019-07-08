@@ -13,21 +13,24 @@ const SINKS = [
   ['location', '\\.', 'replace', ' = '],
 
   // these can be part of elements which are basically variables
-  ['', '\\.', 'src', ' = '],
-  ['', '\\.', 'text', ' = '],
-  ['', '\\.', 'srcdoc', ' = '],
-  ['', '\\.', 'data', ' = '],
-  ['', '\\.', 'codeBase', ' = '],
-  ['', '\\.', 'href', ' = '],
-  ['', '\\.', 'action', ' = '],
-  ['', '\\.', 'formAction', ' = '],
-  ['', '\\.', 'innerText', ' = '],
-  ['', '\\.', 'textContent', ' = '],
-  ['', '\\.', 'outerHTML', ' = '],
-  ['', '\\.', 'insertAdjacentHTML', ' = '],
-  ['', '\\.', 'innerHTML', ' = '],
-  ['', '\\.', 'createContextualFragment', ' = '],
-  ['', '\\.', 'parseFromString', ' = '],
+  ['\\.', 'src', ' = '],
+  ['\\.', 'text', ' = '],
+  ['\\.', 'srcdoc', ' = '],
+  ['\\.', 'data', ' = '],
+  ['\\.', 'codeBase', ' = '],
+  ['\\.', 'href', ' = '],
+  ['\\.', 'action', ' = '],
+  ['\\.', 'formAction', ' = '],
+  ['\\.', 'innerText', ' = '],
+  ['\\.', 'textContent', ' = '],
+  ['\\.', 'outerHTML', ' = '],
+  ['\\.', 'insertAdjacentHTML', ' = '],
+  ['\\.', 'innerHTML', ' = '],
+  ['\\.', 'createContextualFragment', ' = '],
+  ['\\.', 'parseFromString', ' = '],
+
+  // NOTE: these are not taken fro IDL index but from JS
+  ['\\.', 'setAttribute'],
 ]
 
 const USAGE = `
