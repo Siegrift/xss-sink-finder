@@ -16,7 +16,7 @@ const SINKS = [
   ['\\.', 'text', ' = '],
   ['\\.', 'srcdoc', ' = '],
   ['\\.', 'data', ' = '],
-  ['\\.', 'codeBase', ' = '],
+  ['\\.', 'codebase', ' = '],
   ['\\.', 'href', ' = '],
   ['\\.', 'action', ' = '],
   ['\\.', 'formAction', ' = '],
@@ -25,10 +25,10 @@ const SINKS = [
   ['\\.', 'outerHTML', ' = '],
   ['\\.', 'insertAdjacentHTML', ' = '],
   ['\\.', 'innerHTML', ' = '],
-  ['\\.', 'createContextualFragment', ' = '],
-  ['\\.', 'parseFromString', ' = '],
 
   // NOTE: these are not taken fro IDL index but from JS
+  ['\\.', 'createContextualFragment'],
+  ['\\.', 'parseFromString'],
   ['\\.', 'setAttribute'],
 ]
 
