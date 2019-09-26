@@ -26,7 +26,7 @@ const SINKS = [
   ['\\.', 'insertAdjacentHTML', ' = '],
   ['\\.', 'innerHTML', ' = '],
 
-  // NOTE: these are not taken fro IDL index but from JS
+  // NOTE: these are not taken from IDL index but from JS
   ['\\.', 'createContextualFragment'],
   ['\\.', 'parseFromString'],
   ['\\.', 'setAttribute'],
